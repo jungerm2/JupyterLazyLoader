@@ -36,3 +36,7 @@ or place it in jupyter's startup directory which you can find by running the fol
 ```python
 get_ipython().profile_dir.startup_dir
 ```
+
+> _**Note:**_ This does not work with wildcard imports such as `from sklearn import *`. This is due to python's import dynamics, and besides, wildcard imports are usually a bad idea.
+
+_*Remark:*_ Yes, this extensions actually adds the modules to `builtins` instead of to `__main__`'s globals. This is simply because globals aren't shared between modules so the lazy importer cannot access them. Let me know if you know a more elegant solution!
