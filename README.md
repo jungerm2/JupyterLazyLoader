@@ -1,5 +1,7 @@
 # JupyterLazyLoader
 
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?style=flat-square)
+
 I often have a ton of standard imports which slow down startup time. As a matter of style, I usually import all of these at once at the start of the notebook. This allows me to quickly see all relevant imports and not move imports around as needed. But this is wasteful as I don't usually need all of them to be loaded immediatly. Therefore it would be ideal if the modules where lazy loaded. 
 
 To my surprise the only "solution" to this is [this project](https://github.com/8080labs/pyforest) which I dislike for a few reasons:
@@ -23,7 +25,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
-This will create placeholders instead of actually importing the module, and as soon as you interact with the module or use it in ay way, it will be dynamically imported. Simple!
+This will create placeholders instead of actually importing the module, and as soon as you interact with the module or use it in ay way, it will be dynamically imported. Simple! An added side effect is that if you don't end up using one of the packages it won't get imported!
 
 To use it, you'll need to either load the extension:
 
